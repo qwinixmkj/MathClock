@@ -1,0 +1,112 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/clockcontainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context=".ClockActivity">
+
+    <TextView
+        android:id="@+id/timeview"
+        android:layout_marginTop="@dimen/clock_vertical_margin"
+        android:layout_centerHorizontal="true"
+        android:textSize="@dimen/clock_size"
+        android:textStyle="bold"
+        android:text=""
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:id="@+id/alarmcontainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/timeview"
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal"
+        android:visibility="gone"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/alarmview"
+
+            android:layout_centerHorizontal="true"
+            android:textSize="18sp"
+            android:text=""
+            android:gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+       <!-- <Button
+            android:id="@+id/cancelalarm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:text="Cancel"/>-->
+        </LinearLayout>
+
+
+    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:padding="5dp"
+        android:visibility="gone"
+        android:background="@drawable/grey_boarder"
+        android:paddingBottom="25dp"
+        android:stretchColumns="*"
+        android:shrinkColumns="*">
+
+
+        <TableRow
+            android:layout_weight="1">
+            <RadioButton android:id="@+id/binary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Binary"
+                android:layout_weight="1"
+                android:onClick="binaryClicked"/>
+            <RadioButton android:id="@+id/octal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Octal"
+                android:layout_weight="1"
+                android:onClick="octalClicked"/>
+
+        </TableRow>
+        <TableRow
+            android:layout_weight="1">
+            <!--<RadioButton android:id="@+id/decimal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Decimal"
+                android:layout_weight="1"
+                android:onClick="decimalClicked"/>-->
+            <RadioButton android:id="@+id/roman"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Roman Numeral"
+                android:layout_weight="1"
+                android:onClick="romanClicked"/>
+            <RadioButton android:id="@+id/hex"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hexadecimal"
+                android:layout_weight="1"
+                android:onClick="hexClicked"/>
+
+        </TableRow>
+        <!--<TableRow
+            android:layout_weight="1">
+
+            <RadioButton android:id="@+id/roman"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Roman Numeral"
+                android:layout_weight="1"
+                android:onClick="romanClicked"/>
+        </TableRow>-->
+
+    </TableLayout>
+
+</RelativeLayout>

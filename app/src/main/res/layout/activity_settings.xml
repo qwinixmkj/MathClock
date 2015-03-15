@@ -1,0 +1,179 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical"
+
+
+    tools:context="com.qwinix.mathclock.Settings">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/generalsettings"
+                android:layout_marginTop="10dp"
+                android:textSize="18sp"
+                android:background="@android:color/black"
+
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                android:text="General Settings"/>
+            <RelativeLayout
+                android:id="@+id/secondsswitch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/generalsettings"
+                android:layout_marginLeft="15dp"
+                >
+                <TextView
+                    android:id="@+id/sectxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    android:layout_centerVertical="true"
+                    android:text="Seconds field"/>
+                <Switch
+                    android:id="@+id/togglebutton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textOn="ON"
+                    android:textOff="OFF"
+                    android:checked="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_gravity="right"
+                    />
+            </RelativeLayout>
+            <Button
+                android:id="@+id/clockcolor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/secondsswitch"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="15dp"
+                android:background="@android:color/holo_green_dark"
+                android:textColor="@android:color/white"
+                android:text="Change Background Color"/>
+            <Button
+                android:id="@+id/fontcolor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/clockcolor"
+                android:layout_marginLeft="15dp"
+                android:background="@android:color/holo_green_dark"
+                android:textColor="@android:color/white"
+                android:layout_marginTop="10dp"
+                android:text="Change Font Color"/>
+            <Button
+                android:id="@+id/ring"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/fontcolor"
+                android:layout_marginLeft="15dp"
+                android:background="@android:color/holo_green_dark"
+                android:textColor="@android:color/white"
+                android:layout_marginTop="10dp"
+                android:text="Select Alarmtone"/>
+            <Spinner
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:id="@+id/spinner1"
+                android:padding="0dp"
+                android:layout_below="@+id/ring"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="15dp"
+                android:prompt="@string/day_prompt"
+                android:entries="@array/clock_mode"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/alarmsettings"
+                android:layout_marginTop="10dp"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                android:background="@android:color/black"
+                android:layout_below="@+id/spinner1"
+                android:text="Alarm Settings"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/alarmcheck"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="15dp"
+                android:textSize="16sp"
+                android:layout_below="@+id/alarmsettings"
+                android:text="Enable Repeat Alarm"/>
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/alarmsettings"
+                android:id="@+id/repeatalarm"/>
+
+
+            <Button
+                android:id="@+id/datepick"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_below="@+id/alarmcheck"
+                android:background="@android:color/holo_green_dark"
+                android:textColor="@android:color/white"
+                android:onClick="showDatePickerDialog"
+                android:text="Select Date"/>
+            <Button
+                android:id="@+id/timepick"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/datepick"
+                android:layout_marginLeft="15dp"
+                android:background="@android:color/holo_green_dark"
+                android:textColor="@android:color/white"
+                android:layout_marginTop="10dp"
+                android:onClick="showTimePickerDialog"
+                android:text="Set Time"/>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></RelativeLayout>
+            <Button
+                android:id="@+id/setalarm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:padding="0dp"
+                android:layout_marginLeft="15dp"
+
+                android:background="@android:color/holo_green_dark"
+                android:textColor="@android:color/white"
+                android:layout_below="@+id/timepick"
+                android:text="Set Alarm"/>
+            <Button
+                android:id="@+id/cancelalarm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:padding="0dp"
+                android:layout_marginLeft="15dp"
+
+                android:background="@android:color/holo_green_dark"
+                android:textColor="@android:color/white"
+                android:layout_below="@+id/setalarm"
+                android:text="Cancel Alarm"/>
+
+
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>
